@@ -12,6 +12,7 @@ class QuizViewController: UITableViewController {
     @IBOutlet weak var detailDescriptionLabel: UILabel!
     @IBOutlet var questionTableView: UITableView!
     @IBOutlet weak var background: UIImageView!
+    @IBOutlet weak var backgroundOverlay: UIImageView!
     
     func configureView() {
         // Update the user interface for the detail item.
@@ -25,6 +26,7 @@ class QuizViewController: UITableViewController {
             }
             if let image = quiz.image {
                 background?.image = image
+                backgroundOverlay?.image = image
             }
         }
     }
@@ -36,8 +38,6 @@ class QuizViewController: UITableViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         configureView()
-        
-        
     }
 
     override func didReceiveMemoryWarning() {

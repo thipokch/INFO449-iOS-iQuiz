@@ -36,16 +36,27 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-d1-qtp">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-d1-qtp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                 </imageView>
-                                <visualEffectView opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ixP-Zx-Rhh">
+                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeM-50-ywG">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="4UW-Z2-eNa">
+                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cfp-ba-fs2">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </view>
-                                    <blurEffect style="extraLight"/>
+                                    <blurEffect style="regular"/>
+                                </visualEffectView>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-dB-8wP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
+                                </imageView>
+                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-iZ-kvC">
+                                    <rect key="frame" x="0.0" y="199" width="375" height="51"/>
+                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="35B-Qz-UFF">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                    <blurEffect style="prominent"/>
                                 </visualEffectView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJg-9z-UBh">
                                     <rect key="frame" x="15" y="214" width="345" height="21"/>
@@ -57,16 +68,24 @@
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="6zu-d1-qtp" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="02a-SU-5k6"/>
-                                <constraint firstAttribute="trailing" secondItem="ixP-Zx-Rhh" secondAttribute="trailing" id="9AH-wF-yqD"/>
+                                <constraint firstAttribute="trailing" secondItem="FLU-dB-8wP" secondAttribute="trailing" id="8c5-Kg-Ufx"/>
+                                <constraint firstItem="TeM-50-ywG" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="Asd-hQ-ZT8"/>
                                 <constraint firstAttribute="bottom" secondItem="tJg-9z-UBh" secondAttribute="bottom" constant="15" id="G04-cS-42Q"/>
                                 <constraint firstItem="tJg-9z-UBh" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" constant="15" id="Hnp-tS-yPR"/>
-                                <constraint firstItem="ixP-Zx-Rhh" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="JPQ-mZ-dw0"/>
+                                <constraint firstAttribute="bottom" secondItem="FLU-dB-8wP" secondAttribute="bottom" id="JEB-kX-yLC"/>
                                 <constraint firstAttribute="trailing" secondItem="tJg-9z-UBh" secondAttribute="trailing" constant="15" id="VwA-Jb-DPT"/>
-                                <constraint firstItem="ixP-Zx-Rhh" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="Wrp-rO-4U0"/>
                                 <constraint firstAttribute="trailing" secondItem="6zu-d1-qtp" secondAttribute="trailing" id="Xq7-Qi-dc7"/>
                                 <constraint firstAttribute="bottom" secondItem="6zu-d1-qtp" secondAttribute="bottom" id="ZeQ-wq-Bjf"/>
                                 <constraint firstItem="6zu-d1-qtp" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="hdc-C9-WCr"/>
-                                <constraint firstAttribute="bottom" secondItem="ixP-Zx-Rhh" secondAttribute="bottom" id="tS0-OI-BRd"/>
+                                <constraint firstItem="FLU-dB-8wP" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="iMy-FT-WPk"/>
+                                <constraint firstAttribute="trailing" secondItem="0jC-iZ-kvC" secondAttribute="trailing" id="lOK-ZA-nok"/>
+                                <constraint firstAttribute="bottom" secondItem="TeM-50-ywG" secondAttribute="bottom" id="pnd-rH-1dK"/>
+                                <constraint firstItem="TeM-50-ywG" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="qun-9f-l5v"/>
+                                <constraint firstItem="FLU-dB-8wP" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="tCa-eY-z9n"/>
+                                <constraint firstItem="tJg-9z-UBh" firstAttribute="top" secondItem="0jC-iZ-kvC" secondAttribute="top" constant="15" id="v6W-a4-byW"/>
+                                <constraint firstAttribute="bottom" secondItem="0jC-iZ-kvC" secondAttribute="bottom" id="xJH-yH-ml3"/>
+                                <constraint firstItem="0jC-iZ-kvC" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="yD1-3K-dw3"/>
+                                <constraint firstAttribute="trailing" secondItem="TeM-50-ywG" secondAttribute="trailing" id="yMk-aR-7FM"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -84,6 +103,7 @@
                     <navigationItem key="navigationItem" title="Questions" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="background" destination="6zu-d1-qtp" id="8KW-fg-rco"/>
+                        <outlet property="backgroundOverlay" destination="FLU-dB-8wP" id="o0w-9V-HWF"/>
                         <outlet property="detailDescriptionLabel" destination="tJg-9z-UBh" id="dGg-1Z-wDY"/>
                         <outlet property="questionTableView" destination="C2M-Th-Nhl" id="eJT-75-kgE"/>
                     </connections>
@@ -180,7 +200,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Mathematics" width="504" height="368"/>
+        <image name="Mathematics" width="600" height="400"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>

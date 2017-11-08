@@ -13,9 +13,9 @@ class UITableViewSource {
     var quizes = [Quiz("Mathematics"), Quiz("Marvel Super Heroes"), Quiz("Science")]
     
     init() {
-        quizes[0].description = "Some maths work to get your minds running."
-        quizes[1].description = "Save the day."
-        quizes[2].description = "For all the nerds out there."
+        quizes[0].description = "Numbers. Algebras. Shapes."
+        quizes[1].description = "From the world's leading super heroes studio"
+        quizes[2].description = "Chemistry. Biology. Physics."
         
         quizes[0].image = UIImage(named: "Mathematics")
         quizes[1].image = UIImage(named: "Marvel")
