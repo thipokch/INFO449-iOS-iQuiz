@@ -21,36 +21,39 @@ import UIKit
 
 class QuizesViewController: UITableViewController {
     
-
-    @IBAction func goToSettings(_ sender: UIBarButtonItem) {
+    // Populate data from the UITableViewSource
+    var quizes:[Quiz] = UITableViewSource().quizes
+    // For Split View
+    var quizViewController: QuizViewController? = nil
+    
+    // Settings button
+    @objc
+    func goToSettings(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Settings", message: "Settings go here", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK",
                                       style: .default,
                                       handler: nil))
         self.present(alert, animated: true, completion: nil)
-
+        
     }
-    // For Split View
-    var quizViewController: QuizViewController? = nil
     
-    var quizes:[Quiz] = UITableViewSource().quizes
+    // MARK: - Setup View Controller
     
     override func viewDidLoad() {
+        // Sets transparent navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        
         super.viewDidLoad()
         
-
         // Add background to navigation bar
-//        navigationController?.navigationBar.barTintColor = UIColor(patternImage: image!)
+        // navigationController?.navigationBar.barTintColor = UIColor(patternImage: image!)
         
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        // Add edit button
+        // Add edit and settings button
         navigationItem.leftBarButtonItem = editButtonItem
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Settings", style: .plain, target: self, action: #selector(goToSettings(_:)))
 
-        // Add template object
+        // Add to tableview
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(insertNewObject(_:)))
-//        navigationItem.rightBarButtonItem = addButton
         
         // Split View
         if let split = splitViewController {
@@ -70,14 +73,6 @@ class QuizesViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    // Add template object
-//    @objc
-//    func insertNewObject(_ sender: Any) {
-//        objects.insert(NSDate(), at: 0)
-//        let indexPath = IndexPath(row: 0, section: 0)
-//        tableView.insertRows(at: [indexPath], with: .automatic)
-//    }
 
     // MARK: - Segues
 
@@ -86,7 +81,7 @@ class QuizesViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 let quiz = quizes[indexPath.row]
                 let controller = (segue.destination as! UINavigationController).topViewController as! QuizViewController
-                controller.quizItem = quiz
+                controller.quiz = quiz
                 controller.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
                 controller.navigationItem.leftItemsSupplementBackButton = true
             }
@@ -103,6 +98,7 @@ class QuizesViewController: UITableViewController {
         return quizes.count
     }
 
+    // Populate tableview with quizzes information
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let quiz = quizes[indexPath.row]

@@ -20,6 +20,25 @@ class UITableViewSource {
         quizes[0].image = UIImage(named: "Mathematics")
         quizes[1].image = UIImage(named: "Marvel")
         quizes[2].image = UIImage(named: "Science")
+        
+        let sample = Question(question: "Why is the world very very very complicated", answers: ["abc","bcd","xyz","zzz"], correctAnswerIndex: 1)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[0].addQuestion(question: sample)
+        quizes[1].addQuestion(question: sample)
+        quizes[2].addQuestion(question: sample)
+
     }
-    
 }

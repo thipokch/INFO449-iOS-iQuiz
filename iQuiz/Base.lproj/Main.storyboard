@@ -5,6 +5,7 @@
     </device>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,88 +25,17 @@
             </objects>
             <point key="canvasLocation" x="-38" y="-630"/>
         </scene>
-        <!--Detail-->
+        <!--Quiz-->
         <scene sceneID="yUG-lL-AsK">
             <objects>
-                <viewController title="Detail" id="JEX-9P-axG" customClass="QuizViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="C2M-Th-Nhl">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <view key="tableHeaderView" contentMode="scaleToFill" id="CXV-Nq-Ols">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="6zu-d1-qtp">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                </imageView>
-                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TeM-50-ywG">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Cfp-ba-fs2">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
-                                    <blurEffect style="regular"/>
-                                </visualEffectView>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mathematics" translatesAutoresizingMaskIntoConstraints="NO" id="FLU-dB-8wP">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="250"/>
-                                </imageView>
-                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0jC-iZ-kvC">
-                                    <rect key="frame" x="0.0" y="199" width="375" height="51"/>
-                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="35B-Qz-UFF">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </view>
-                                    <blurEffect style="prominent"/>
-                                </visualEffectView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tJg-9z-UBh">
-                                    <rect key="frame" x="15" y="214" width="345" height="21"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <nil key="textColor"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="6zu-d1-qtp" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="02a-SU-5k6"/>
-                                <constraint firstAttribute="trailing" secondItem="FLU-dB-8wP" secondAttribute="trailing" id="8c5-Kg-Ufx"/>
-                                <constraint firstItem="TeM-50-ywG" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="Asd-hQ-ZT8"/>
-                                <constraint firstAttribute="bottom" secondItem="tJg-9z-UBh" secondAttribute="bottom" constant="15" id="G04-cS-42Q"/>
-                                <constraint firstItem="tJg-9z-UBh" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" constant="15" id="Hnp-tS-yPR"/>
-                                <constraint firstAttribute="bottom" secondItem="FLU-dB-8wP" secondAttribute="bottom" id="JEB-kX-yLC"/>
-                                <constraint firstAttribute="trailing" secondItem="tJg-9z-UBh" secondAttribute="trailing" constant="15" id="VwA-Jb-DPT"/>
-                                <constraint firstAttribute="trailing" secondItem="6zu-d1-qtp" secondAttribute="trailing" id="Xq7-Qi-dc7"/>
-                                <constraint firstAttribute="bottom" secondItem="6zu-d1-qtp" secondAttribute="bottom" id="ZeQ-wq-Bjf"/>
-                                <constraint firstItem="6zu-d1-qtp" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="hdc-C9-WCr"/>
-                                <constraint firstItem="FLU-dB-8wP" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="iMy-FT-WPk"/>
-                                <constraint firstAttribute="trailing" secondItem="0jC-iZ-kvC" secondAttribute="trailing" id="lOK-ZA-nok"/>
-                                <constraint firstAttribute="bottom" secondItem="TeM-50-ywG" secondAttribute="bottom" id="pnd-rH-1dK"/>
-                                <constraint firstItem="TeM-50-ywG" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="qun-9f-l5v"/>
-                                <constraint firstItem="FLU-dB-8wP" firstAttribute="top" secondItem="CXV-Nq-Ols" secondAttribute="top" id="tCa-eY-z9n"/>
-                                <constraint firstItem="tJg-9z-UBh" firstAttribute="top" secondItem="0jC-iZ-kvC" secondAttribute="top" constant="15" id="v6W-a4-byW"/>
-                                <constraint firstAttribute="bottom" secondItem="0jC-iZ-kvC" secondAttribute="bottom" id="xJH-yH-ml3"/>
-                                <constraint firstItem="0jC-iZ-kvC" firstAttribute="leading" secondItem="CXV-Nq-Ols" secondAttribute="leading" id="yD1-3K-dw3"/>
-                                <constraint firstAttribute="trailing" secondItem="TeM-50-ywG" secondAttribute="trailing" id="yMk-aR-7FM"/>
-                            </constraints>
-                        </view>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Fze-Wj-v0a">
-                                <rect key="frame" x="0.0" y="278" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Fze-Wj-v0a" id="bhN-f3-zzd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                    </tableView>
+                <viewController title="Quiz" id="JEX-9P-axG" customClass="QuizViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Questions" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" title="Quiz                               " id="mOI-FS-AaM"/>
                     <connections>
-                        <outlet property="background" destination="6zu-d1-qtp" id="8KW-fg-rco"/>
-                        <outlet property="backgroundOverlay" destination="FLU-dB-8wP" id="o0w-9V-HWF"/>
-                        <outlet property="detailDescriptionLabel" destination="tJg-9z-UBh" id="dGg-1Z-wDY"/>
-                        <outlet property="questionTableView" destination="C2M-Th-Nhl" id="eJT-75-kgE"/>
+                        <segue destination="RdR-jf-oPg" kind="show" identifier="ShowQuestionTable" id="NrL-DA-hxo"/>
+                        <segue destination="kGd-NJ-m8h" kind="show" identifier="ShowAnswer" id="XZl-Me-OQi"/>
+                        <segue destination="8gr-a4-ZkL" kind="show" identifier="ShowQuestion" id="ZCQ-eq-MDH"/>
+                        <segue destination="RMx-3f-FxP" kind="show" identifier="GoBack" id="5lS-ga-8lx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
@@ -126,10 +56,10 @@
             </objects>
             <point key="canvasLocation" x="-856" y="-330"/>
         </scene>
-        <!--Quizes-->
+        <!--Quizzes-->
         <scene sceneID="smW-Zh-WAh">
             <objects>
-                <tableViewController title="Quizes" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="QuizesViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="QuizesViewController" title="Quizzes" clearsSelectionOnViewWillAppear="NO" id="7bK-jq-Zjz" customClass="QuizesViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="r7i-6Z-zg0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -178,6 +108,43 @@
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" id="Kuu-sC-d5m">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dVU-0G-9JG" customClass="ImageHeaderView" customModule="iQuiz" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RQF-Zz-9Lv">
+                            <rect key="frame" x="0.0" y="406" width="375" height="406"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <prototypes>
+                                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerChoices" textLabel="zE6-oA-GDz" rowHeight="50" style="IBUITableViewCellStyleDefault" id="ql4-nx-6ro">
+                                    <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ql4-nx-6ro" id="jJs-qK-rmn">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <subviews>
+                                            <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zE6-oA-GDz">
+                                                <rect key="frame" x="15" y="0.0" width="345" height="49.666666666666664"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </tableViewCellContentView>
+                                </tableViewCell>
+                            </prototypes>
+                        </tableView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="RQF-Zz-9Lv" firstAttribute="height" secondItem="dVU-0G-9JG" secondAttribute="height" id="YgY-Qb-FpC"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="6yp-bP-zRV"/>
+                </stackView>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="708" y="-630.13493253373315"/>
@@ -198,11 +165,172 @@
             </objects>
             <point key="canvasLocation" x="-45" y="129"/>
         </scene>
+        <!--Question-->
+        <scene sceneID="Qfn-nL-0ZX">
+            <objects>
+                <viewController storyboardIdentifier="QuestionViewController" title="Question" id="8gr-a4-ZkL" customClass="QuestionViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="c0h-vx-Kti">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qjy-kj-LDr" customClass="ImageHeaderView" customModule="iQuiz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0BL-2s-0NI">
+                                <rect key="frame" x="0.0" y="406" width="375" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerChoices" textLabel="xgk-Lc-9nO" imageView="T1y-FZ-kf6" rowHeight="50" style="IBUITableViewCellStyleDefault" id="D7m-Ev-oWU">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="D7m-Ev-oWU" id="bVU-k4-zdj">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="xgk-Lc-9nO">
+                                                    <rect key="frame" x="80" y="0.0" width="280" height="49.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="selectIcon_unselected" id="T1y-FZ-kf6">
+                                                    <rect key="frame" x="15" y="0.0" width="50" height="49.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0BL-2s-0NI" firstAttribute="height" secondItem="Qjy-kj-LDr" secondAttribute="height" id="Bc1-TP-Z7z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="8C2-TY-DUi"/>
+                    </stackView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Question" id="M2h-pd-KSH"/>
+                    <connections>
+                        <outlet property="answerSelectionTable" destination="0BL-2s-0NI" id="yYu-W9-J8Y"/>
+                        <outlet property="imageHeaderView" destination="Qjy-kj-LDr" id="Rtt-rg-xHJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e0p-xH-ELD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="708" y="864"/>
+        </scene>
+        <!--Answer View-->
+        <scene sceneID="41L-9R-HC9">
+            <objects>
+                <viewController storyboardIdentifier="AnswerViewController" title="Answer View" id="kGd-NJ-m8h" customClass="AnswerViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <stackView key="view" opaque="NO" contentMode="scaleToFill" axis="vertical" id="M1K-gK-Tb7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3P-cy-wrz" customClass="ImageHeaderView" customModule="iQuiz" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="KzN-k5-3Q6">
+                                <rect key="frame" x="0.0" y="406" width="375" height="406"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AnswerChoices" textLabel="40N-ny-GZS" imageView="7M3-QD-SK2" rowHeight="50" style="IBUITableViewCellStyleDefault" id="hIM-BW-ivd">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hIM-BW-ivd" id="vO3-FQ-DLK">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="40N-ny-GZS">
+                                                    <rect key="frame" x="80" y="0.0" width="280" height="49.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="selectIcon_unselected" id="7M3-QD-SK2">
+                                                    <rect key="frame" x="15" y="0.0" width="50" height="49.666666666666664"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="KzN-k5-3Q6" firstAttribute="height" secondItem="L3P-cy-wrz" secondAttribute="height" id="J99-Uw-LhP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="YfG-RO-FyT"/>
+                    </stackView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Answer" id="EmW-mw-hwb"/>
+                    <connections>
+                        <outlet property="answerSelectionTable" destination="KzN-k5-3Q6" id="3gG-K1-Jp3"/>
+                        <outlet property="imageHeaderView" destination="L3P-cy-wrz" id="FfB-Q0-o5T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dI6-dB-PQk" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1469.5999999999999" y="863.79310344827593"/>
+        </scene>
+        <!--Questions-->
+        <scene sceneID="91v-N3-bww">
+            <objects>
+                <viewController storyboardIdentifier="QuestionsTableViewController" title="Questions" id="RdR-jf-oPg" customClass="QuestionsTableViewController" customModule="iQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5Po-gI-PFU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="41t-A4-R1c" customClass="ImageHeaderView" customModule="iQuiz" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Question" textLabel="SIn-c9-K7S" imageView="2T5-MI-IKc" style="IBUITableViewCellStyleDefault" id="K1Z-I7-vII">
+                                <rect key="frame" x="0.0" y="428" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K1Z-I7-vII" id="FtI-d3-OGv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="SIn-c9-K7S">
+                                            <rect key="frame" x="75" y="0.0" width="284" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="selectIcon_unselected" id="2T5-MI-IKc">
+                                            <rect key="frame" x="16" y="0.0" width="44" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Questions" id="fS5-9I-ThM"/>
+                    <connections>
+                        <outlet property="imageHeaderView" destination="41t-A4-R1c" id="I0R-l8-j3Q"/>
+                        <outlet property="tableView" destination="5Po-gI-PFU" id="d2r-ZD-peM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qhc-eH-gyD" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-46" y="864"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Mathematics" width="600" height="400"/>
+        <image name="selectIcon_unselected" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6S0-TO-JiA"/>
+        <segue reference="5lS-ga-8lx"/>
     </inferredMetricsTieBreakers>
 </document>
