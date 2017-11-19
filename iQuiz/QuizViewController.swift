@@ -10,6 +10,7 @@ import UIKit
 
 class QuizViewController: UIViewController {
     
+    // MARK: - Variables
     fileprivate var currentViewController:UIViewController!
     fileprivate var nextViewController:UIViewController!
     // Store quiz data
@@ -19,8 +20,12 @@ class QuizViewController: UIViewController {
             navigationItem.title = quiz.title
         }
     }
-    var isAnswering:Bool = false
+    var saveProgress:(() -> ())! = {
+        print("saved nothing")
+    }
+    private var isAnswering:Bool = false
     
+    // MARK: - Properties
     var currentQuestionNum:Int {
         get {
             return quiz.answers.count
@@ -32,19 +37,19 @@ class QuizViewController: UIViewController {
         }
     }
     
-    
-    
-    ////////////
-    
-    override func viewDidLoad() {
+    // MARK: - View Controller Events
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+    }
+    override func viewDidLoad() {
+        if quiz != nil {
+            goToNextViewController()
+        }
         // Hide the translucent on large title
         parent?.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
         
         super.viewDidLoad()
-        if quiz != nil {
-            goToNextViewController()
-        }
         
         let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(respondToSwipeGesture))
         swipeRight.direction = UISwipeGestureRecognizerDirection.right
@@ -76,58 +81,44 @@ class QuizViewController: UIViewController {
             }
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    ///////////
-    
-    // Switch the given view controller to another view controller
-    fileprivate func switchViewController(_ from: UIViewController?, to: UIViewController?) {
-        if from != nil {
-            from!.willMove(toParentViewController: nil)
-            from!.view.removeFromSuperview()
-            from!.removeFromParentViewController()
-        }
-        if to != nil {
-            self.addChildViewController(to!)
-            self.view.insertSubview(to!.view, at: 2)
-            to!.didMove(toParentViewController: self)
-        }
-    }
-    
+    // MARK: - Action Objects
     // Sets up the next view controller and go to the next
     @objc
     func goToNextViewController() {
-        //  Animation to th next view controller
-//        UIView.beginAnimations("View Flip", context: nil)
-//        UIView.setAnimationDuration(0.4)
-//        UIView.setAnimationCurve(.easeInOut)
-//        UIView.setAnimationTransition(.flipFromRight, for: view, cache: true)
         
         nextViewController = initNextViewController()
+        
         if nextViewController != nil {
             setupNextViewController()
+            UIView.beginAnimations("View Flip", context: nil)
+            UIView.setAnimationDuration(0.5)
+            UIView.setAnimationCurve(.easeInOut)
+            UIView.setAnimationTransition(.curlUp, for: view, cache: true)
             nextViewController.view.frame = view.frame
             switchViewController(currentViewController, to: nextViewController)
             currentViewController = nextViewController
+            UIView.commitAnimations()
             nextViewController = nil
         }
-//        UIView.commitAnimations()
-
     }
     
     @objc
     func selectedAnswer() {
-        print("answer")
-        let questionVC = currentViewController as! QuestionViewController
-        currentViewController.navigationItem.rightBarButtonItem?.isEnabled = true
-        quiz.addAnswer(question: currentQuestion, chosenAnswerIndex: questionVC.answer, correctAnswerIndex: currentQuestion.correctAnswerIndex)
-        goToNextViewController()
+        let questionVC = self.currentViewController as! QuestionViewController
+        self.quiz.addAnswer(question: self.currentQuestion, chosenAnswerIndex: questionVC.answer, correctAnswerIndex: self.currentQuestion.correctAnswerIndex)
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.saveProgress()
+        }
+        self.currentViewController.navigationItem.rightBarButtonItem?.isEnabled = true
+        self.goToNextViewController()
     }
     
-    
+    // MARK: - Child View Controller Manager
     // Init the next view controller
     func initNextViewController() -> (UIViewController?) {
         // If the user WAS in the middle of answering the question
@@ -135,7 +126,7 @@ class QuizViewController: UIViewController {
             isAnswering = false
             return storyboard?
                 .instantiateViewController(withIdentifier: "AnswerViewController") as! AnswerViewController
-        // If the quiz is not complete and the user WAS NOT in the middle of answering the question
+            // If the quiz is not complete and the user WAS NOT in the middle of answering the question
         } else if !isAnswering && !quiz.isCompleted {
             isAnswering = true
             return storyboard?
@@ -186,10 +177,21 @@ class QuizViewController: UIViewController {
         }
     }
     
-    ///////////////////////////////////////////////////////////////////
+    // Switch the given view controller to another view controller
+    fileprivate func switchViewController(_ from: UIViewController?, to: UIViewController?) {
+        if from != nil {
+            from!.willMove(toParentViewController: nil)
+            from!.view.removeFromSuperview()
+            from!.removeFromParentViewController()
+        }
+        if to != nil {
+            self.addChildViewController(to!)
+            self.view.insertSubview(to!.view, at: 2)
+            to!.didMove(toParentViewController: self)
+        }
+    }
     
-    ////// SEGUE METHOD
-
+    // MARK: - [Unused] Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier! {
         case "ShowQuestionTable":
@@ -232,3 +234,4 @@ class QuizViewController: UIViewController {
         }
     }
 }
+

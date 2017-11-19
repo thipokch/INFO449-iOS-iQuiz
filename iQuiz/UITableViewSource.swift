@@ -10,35 +10,35 @@ import Foundation
 import UIKit
 
 class UITableViewSource {
-    var quizes = [Quiz("Mathematics"), Quiz("Marvel Super Heroes"), Quiz("Science")]
+    var quizzes = [Quiz("Mathematics"), Quiz("Marvel Super Heroes"), Quiz("Science")]
     
     init() {
-        quizes[0].description = "Numbers. Algebras. Shapes."
-        quizes[1].description = "From the world's leading super heroes studio"
-        quizes[2].description = "Chemistry. Biology. Physics."
+        quizzes[0].descriptionText = "Numbers. Algebras. Shapes."
+        quizzes[1].descriptionText = "From the world's leading super heroes studio"
+        quizzes[2].descriptionText = "Chemistry. Biology. Physics."
         
-        quizes[0].image = UIImage(named: "Mathematics")
-        quizes[1].image = UIImage(named: "Marvel")
-        quizes[2].image = UIImage(named: "Science")
+        quizzes[0].image = UIImage(named: "Mathematics")
+        quizzes[1].image = UIImage(named: "Marvel")
+        quizzes[2].image = UIImage(named: "Science")
         
         let sample = Question(question: "Why is the world very very very complicated", answers: ["abc","bcd","xyz","zzz"], correctAnswerIndex: 1)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[0].addQuestion(question: sample)
-        quizes[1].addQuestion(question: sample)
-        quizes[2].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[0].addQuestion(question: sample)
+        quizzes[1].addQuestion(question: sample)
+        quizzes[2].addQuestion(question: sample)
 
     }
 }

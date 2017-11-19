@@ -9,20 +9,46 @@
 import Foundation
 
 // Case sensitive
-class Answer {
+class Answer: NSObject, NSCoding  {
+    
+    // MARK: - Variables
     var question:Question!
-    var correctAnswerIndex:Int
     var chosenAnswerIndex:Int
+    
+    // MARK: - NSCoding
+    func encode(with aCoder: NSCoder) {
+        let questionData = NSKeyedArchiver.archivedData(withRootObject: question)
+        aCoder.encode(questionData, forKey: "question")
+        aCoder.encode(chosenAnswerIndex, forKey: "chosenAnswerIndex")
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        guard let questionData = aDecoder.decodeObject(forKey: "question"),
+            let question = NSKeyedUnarchiver.unarchiveObject(with: questionData as! Data) as? Question
+            else {
+                return nil
+        }
+        let chosenAnswerIndex = aDecoder.decodeInteger(forKey: "chosenAnswerIndex")
+        self.init(question: question, chosenAnswerIndex: chosenAnswerIndex)
+    }
+    
+    // MARK: - Computed Properties
     var isCorrect:Bool {
         get {
             return correctAnswerIndex == chosenAnswerIndex
         }
     }
     
-    init(question: Question, chosenAnswerIndex:Int, correctAnswerIndex:Int) {
+    var correctAnswerIndex:Int {
+        get {
+            return question.correctAnswerIndex
+        }
+    }
+    
+    // MARK: - Methods
+    init(question: Question, chosenAnswerIndex:Int) {
         self.question = question
         self.chosenAnswerIndex = chosenAnswerIndex
-        self.correctAnswerIndex = correctAnswerIndex
     }
     
     func addQuestion(question:Question) {
